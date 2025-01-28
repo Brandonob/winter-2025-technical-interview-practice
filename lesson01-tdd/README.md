@@ -4,6 +4,8 @@
 
 Imagine you are asked to build a frying pan. What kind of requirements would you want to include? How would make sure that the pan meets the requirements?
 
+Pan won't burn or melt
+
 ## Lecture Content (20 minutes)
 
 ### What is TDD?
@@ -14,7 +16,7 @@ Test-Driven Development (TDD) is a software development approach where tests are
 
 ```javascript
 // Failing test for sum function
-test("sum function should return the correct sum of two numbers", () => {
+test('sum function should return the correct sum of two numbers', () => {
   const result = sum(2, 3);
   expect(result).toBe(5);
 });

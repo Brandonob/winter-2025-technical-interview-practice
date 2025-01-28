@@ -4,6 +4,17 @@
 // 12 => '************'
 // 3 => "***"
 
+//Function takes a number(n) between 3 and 100
+//returns '*' for number entered
+
+function numberToAsterisk(n) {
+  if (n < 3 || n > 100) {
+    return "Number isn't valid";
+  }
+
+  return;
+}
+
 // 2. Given an integer, n, between 3 and 100,
 // return a line n characters long where the first and last character are '*' and all the middle characters are a space.
 
