@@ -6,23 +6,42 @@
  */
 function lengthOfLongestSubstring(s) {
   // Your code here
+  //keep track of all strings
+  //count starts over when new string is presented
+
+  let uniqueStrArr = [];
+  let countArr = [];
   let longestSubstring = 0;
-  //split string into array
-  let stringToArr = s.split(' ');
-  // console.log('stringArr', stringToArr);
 
-  //count substrings in arr and return as arr
-  let stringIndexCount = stringToArr.map((el) => {
-    return el.length;
-  });
-  // console.log(stringIndexCount);
+  for (let i = 0; i < s.length; i++) {
+    if (uniqueStrArr.includes(s[i])) {
+      countArr.push(uniqueStrArr.length);
+    } else uniqueStrArr.push(s[i]);
+  }
 
-  //return largest number in arr
-  stringIndexCount.forEach((el) => {
+  countArr.forEach((el) => {
     if (el > longestSubstring) {
       longestSubstring = el;
     }
   });
+
+  // let longestSubstring = 0;
+  // //split string into array
+  // let stringToArr = s.split(' ');
+  // // console.log('stringArr', stringToArr);
+
+  // //count substrings in arr and return as arr
+  // let stringIndexCount = stringToArr.map((el) => {
+  //   return el.length;
+  // });
+  // // console.log(stringIndexCount);
+
+  // //return largest number in arr
+  // stringIndexCount.forEach((el) => {
+  //   if (el > longestSubstring) {
+  //     longestSubstring = el;
+  //   }
+  // });
   return longestSubstring;
 }
 
