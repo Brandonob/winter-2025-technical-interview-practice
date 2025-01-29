@@ -12,7 +12,7 @@ text = "ababcababcabc"
 pattern = "abc"
 
 Output:
-[2, 7, 10, 13]
+[2, 7, 10]
 
 Input:
 text = "hello world"
@@ -31,6 +31,20 @@ function stringMatching(text, pattern) {
   // TODO: Implement the string matching algorithm
   // Return an array of indices where the pattern is found in the text
   // If the pattern is not found, return an empty array
+  if (pattern.length > text.length) {
+    return [];
+  }
+  let resultArr = [];
+
+  for (let i = 0; i < text.length; i++) {
+    let slicedText = text.slice(i, i + pattern.length);
+
+    if (slicedText == pattern) {
+      resultArr.push(i);
+    }
+  }
+  return resultArr;
 }
+console.log(stringMatching('ababcababcabc', 'abc'));
 
 module.exports = stringMatching;
